@@ -1,0 +1,24 @@
+name:student Management workflow
+
+
+on:
+  push:
+    branches:["main"]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latests
+
+  steps:
+    -name: checkout repository
+     uses: actions/checkout@v3
+
+    -name: Set Up python
+     uses: action/setup-python@v4
+     with:
+       python-version: "3.10"
+
+     -name: Install Dependncies
+      run: |
+        pip install -r requirements.txt
+  
